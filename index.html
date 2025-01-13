@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>free executors</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: RGB(25, 25, 25);
+            color: black;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .center-text {
+            font-size: 5em;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px black;
+            z-index: 1;
+            color: RGB(255, 255, 255);
+        }
+
+        .small-text {
+            font-size: 1em;
+            margin-top: 10px;
+            text-align: center;
+            z-index: 1;
+            color: RGB(255, 255, 255);
+        }
+
+        .button {
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: white;
+            background-color: RGB(35, 35, 35);
+            border: black;
+            cursor: pointer;
+            text-shadow: 1px 1px black;
+            z-index: 1;
+        }
+
+        .button:hover {
+            box-shadow: 0px 0px 10px RGB(35, 35, 35);
+        }
+
+        .panel-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .dev-credit-button {
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: white;
+            background-color: RGB(35, 35, 35);
+            border: black;
+            cursor: pointer;
+            text-shadow: 1px 1px black;
+            z-index: 1;
+        }
+
+
+        .panel {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            background-color: #454545;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            z-index: 2;
+            transition: opacity 0.5s ease;
+        }
+
+        .panel h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+
+        .panel p {
+            font-size: 20px;
+        }
+
+        .mute-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .mute-button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+
+<body>
+    <audio id="bgMusic" autoplay loop>
+        <source src="https://github.com/HawaWEBDEV/songmp3/raw/main/LoveSongs.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="particles-js"></div>
+    <div class="center-text">
+       the best free executors for roblox
+    </div>
+    <div class="small-text">
+        Website made by that one femboy
+    </div>
+
+    <button class="dev-credit-button" onclick="openPanel('dev-panel')">links</button>
+    <button class="button" onclick="window.location.href='demo.html'">
+        Back
+    </button>
+
+    <div id="dev-panel-overlay" class="panel-overlay" onclick="closePanel('dev-panel')"></div>
+    <div id="dev-panel" class="panel">
+        <h2>free executors</h2>
+        <div>
+            <li>https://discord.gg/theargon</li>
+            <li>my discord https://discord.gg/bTtWHE4Xem</li>
+            <li>https://updown.link/file/88xtnn solara download</li>
+            <li>soon</li>
+            <li>(copy the links and then paste the link)</li>
+        </div>
+    </div>
+
+    <script>
+        function openPanel(panelId) {
+            var panel = document.getElementById(panelId);
+            var overlay = document.getElementById(panelId + "-overlay");
+            panel.style.opacity = "0";
+            overlay.style.opacity = "0";
+            panel.style.display = "block";
+            overlay.style.display = "block";
+            setTimeout(function () {
+                panel.style.opacity = "1";
+                overlay.style.opacity = "1";
+            }, 50);
+        }
+
+        function closePanel(panelId) {
+            var panel = document.getElementById(panelId);
+            var overlay = document.getElementById(panelId + "-overlay");
+            panel.style.opacity = "0";
+            overlay.style.opacity = "0";
+            setTimeout(function () {
+                panel.style.display = "none";
+                overlay.style.display = "none";
+            }, 500);
+        }
+
+        function openDiscord() {
+            window.open("demo.html", "_blank");
+        }
+
+        function toggleMute() {
+            var bgMusic = document.getElementById('bgMusic');
+            bgMusic.muted = !bgMusic.muted;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#92C7CF"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#00000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#EEF7FF",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 9
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 9,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+
+        function toggleDevelopersMenu() {
+            var developersMenu = document.getElementById("developersMenu");
+            if (developersMenu.style.display === "none") {
+                developersMenu.style.display = "block";
+            } else {
+                developersMenu.style.display = "none";
+            }
+        }
+
+        function goBack() {
+            var developersMenu = document.getElementById("developersMenu");
+            developersMenu.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
